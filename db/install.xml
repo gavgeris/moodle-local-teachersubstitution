@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<XMLDB xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       path="local/teachersubstitution/db"
+       version="2025111300"
+       xsi:noNamespaceSchemaLocation="../../../lib/xmldb/xmldb.xsd">
+    <TABLES>
+        <TABLE name="epimorfwtes" comment="Table for available teachers">
+            <FIELDS>
+                <FIELD name="id" type="int" length="10" notnull="true" sequence="true" comment="Primary key"/>
+                <FIELD name="emailpsd" type="char" length="100" notnull="true" sequence="false" comment="Username (email)"/>
+                <FIELD name="isold" type="int" length="1" notnull="false" sequence="false" default="0" comment="Is old teacher"/>
+                <FIELD name="years" type="int" length="2" notnull="false" sequence="false" comment="Years of experience"/>
+                <FIELD name="choice1" type="char" length="100" notnull="false" sequence="false" comment="First choice"/>
+                <FIELD name="choice2" type="char" length="100" notnull="false" sequence="false" comment="Second choice"/>
+                <FIELD name="choice3" type="char" length="100" notnull="false" sequence="false" comment="Third choice"/>
+                <FIELD name="email" type="char" length="100" notnull="false" sequence="false" comment="Email address"/>
+                <FIELD name="eidikotita" type="char" length="100" notnull="false" sequence="false" comment="Specialization"/>
+                <FIELD name="surname" type="char" length="100" notnull="false" sequence="false" comment="Last name"/>
+                <FIELD name="name" type="char" length="100" notnull="false" sequence="false" comment="First name"/>
+                <FIELD name="finalseminar" type="char" length="100" notnull="false" sequence="false" comment="Final seminar"/>
+                <FIELD name="finaltmima" type="char" length="100" notnull="false" sequence="false" comment="Final department"/>
+                <FIELD name="registered" type="int" length="1" notnull="false" sequence="false" default="0" comment="Is registered"/>
+                <FIELD name="priority" type="int" length="3" notnull="false" sequence="false" comment="Priority level"/>
+                <FIELD name="accepted" type="int" length="1" notnull="false" sequence="false" default="0" comment="Is accepted"/>
+                <FIELD name="batch" type="char" length="50" notnull="false" sequence="false" comment="Batch information"/>
+                <FIELD name="comments" type="text" notnull="false" sequence="false" comment="Comments"/>
+            </FIELDS>
+            <KEYS>
+                <KEY name="primary" type="primary" fields="id"/>
+                <KEY name="emailpsd" type="unique" fields="emailpsd"/>
+            </KEYS>
+        </TABLE>
+    </TABLES>
+</XMLDB>
