@@ -126,7 +126,12 @@ function local_teachersubstitution_get_available_teachers($courseid) {
     }
     
     // Then get available teachers from epimorfwtes table
-    $availableteachers = $DB->get_records('epimorfwtes', ['accepted' => 1], 'surname, name', 'emailpsd, name, surname');
+    $sql = "SELECT emailpsd, name, surname
+          FROM {epimorfwtes}
+         WHERE accepted IS NULL
+           AND (finaltmima IS NULL OR finaltmima = '')
+      ORDER BY surname, name";
+    $availableteachers = $DB->get_records_sql($sql);
     foreach ($availableteachers as $teacher) {
         $fullname = $teacher->name . ' ' . $teacher->surname;
         $options[$teacher->emailpsd] = $fullname;

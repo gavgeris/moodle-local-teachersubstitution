@@ -11,8 +11,8 @@ require_once('../../config.php');
 require_once($CFG->libdir . '/adminlib.php');
 require_once(__DIR__ . '/lib.php');
 
-admin_externalpage_setup('local_teachersubstitution');
-
+//admin_externalpage_setup('local_teachersubstitution');
+require_login();
 $PAGE->set_url(new moodle_url('/local/teachersubstitution/index.php'));
 $PAGE->set_title(get_string('pluginname', 'local_teachersubstitution'));
 $PAGE->set_heading(get_string('pluginname', 'local_teachersubstitution'));
