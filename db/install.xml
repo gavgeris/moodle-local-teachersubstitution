@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<XMLDB xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" path="local/teachersubstitution/db" version="2025111301" xsi:noNamespaceSchemaLocation="../../../lib/xmldb/xmldb.xsd">
+    <TABLES>
+        <TABLE name="epimorfwtes" comment="Table for available teachers">
+            <FIELDS>
+                <FIELD name="id" type="int" length="10" notnull="true" sequence="true"/>
+                <FIELD name="emailpsd" type="char" length="100" notnull="true" sequence="false"/>
+                <FIELD name="isold" type="int" length="1" notnull="false" sequence="false" default="0"/>
+                <FIELD name="years" type="int" length="2" notnull="false" sequence="false" default="0"/>
+                <FIELD name="choice1" type="char" length="100" notnull="false" sequence="false"/>
+                <FIELD name="choice2" type="char" length="100" notnull="false" sequence="false"/>
+                <FIELD name="choice3" type="char" length="100" notnull="false" sequence="false"/>
+                <FIELD name="email" type="char" length="100" notnull="false" sequence="false"/>
+                <FIELD name="eidikotita" type="char" length="100" notnull="false" sequence="false"/>
+                <FIELD name="surname" type="char" length="100" notnull="false" sequence="false"/>
+                <FIELD name="name" type="char" length="100" notnull="false" sequence="false"/>
+                <FIELD name="finalseminar" type="char" length="100" notnull="false" sequence="false"/>
+                <FIELD name="finaltmima" type="char" length="100" notnull="false" sequence="false"/>
+                <FIELD name="registered" type="int" length="1" notnull="false" sequence="false" default="0"/>
+                <FIELD name="priority" type="int" length="3" notnull="false" sequence="false" default="0"/>
+                <FIELD name="accepted" type="int" length="1" notnull="false" sequence="false" default="0"/>
+                <FIELD name="batch" type="char" length="50" notnull="false" sequence="false"/>
+            </FIELDS>
+            <KEYS>
+                <KEY name="primary" type="primary" fields="id"/>
+                <KEY name="emailpsd" type="unique" fields="emailpsd"/>
+            </KEYS>
+        </TABLE>
+    </TABLES>
+</XMLDB>
